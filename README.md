@@ -6,6 +6,8 @@ Repository for an examplatory RShiny application structured as follows:
 - sample - RShiny application
 - apppackage - package
 
+You can find the application [here](http://dominikzabinski.com:3838/sample/).
+
 ## data/
 
 I'm using <code>{DBI}</code> package an .sqlite engine to create simple database. Database is based on single .csv file with names of musician/bands, with additional info about genre. 
@@ -23,7 +25,7 @@ This is the package that holds majority of important files behind RShiny app. Be
 
 I'm using <code>{roxygen2}</code> to document all the functions in the package. 
 
-## application/
+## sample/
 
 All of the functions and modules are stored in a <code>{apppackage}</code>. The only .R files in this directory is an app.R file that:
 
