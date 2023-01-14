@@ -1,22 +1,37 @@
 # example_rshiny
 
-Repository for an examplatory RShiny application structured as follows
+Repository for an examplatory RShiny application structured as follows:
 
-data - creating database
-sample - RShiny application
-apppackage - package
+- data - creating database
+- sample - RShiny application
+- apppackage - package
 
 ## data
 
+I'm using <code>{DBI}</code> package an .sqlite engine to create simple database. Database is based on single .csv file with names of musician/bands, with additional info about genre. 
+
+Based on that I've created database structure, splitting data into separate tables for dictionaries. 
+
+Based on the data I've randomized encounters (relationships?) that would help me in building a model for finding related/similar bands without filling database manually via app.
+
 ## package
+
+Beside basic files/directories I've also included:
+
+- inst directory to store .css and .js files
+- testthat directory with some basic tests
+
+I'm using <code>{roxygen2}</code> to document all the functions in the package. 
 
 ## application
 
-Justyfying choices for packages:
+## Justifying choices
 
-- shiny, for, well, shiny
-- DBI - for connecting to database easy, simple, 
-- shinyWidgets - pickerInput mostly (opcja inline sprawia ze tworzymy human-readable zdania),
-- htmltools - for tagAppendAttributes
-- data.table for data wragnling
-- ggplot2
+For packages:
+
+- <code>{shiny}</code>: for, well, shiny
+- <code>{DBI}</code>: for connecting to database easy, simple, 
+- <code>{shinyWidgets}</code> - pickerInput mostly (inline option enables making sentences with inputs in them which will make app easier to use),
+- <code>{htmltools}</code> - for tagAppendAttributes
+- <code>{data.table}</code> - for data wrangling
+- <code>{ggplot2}</code>

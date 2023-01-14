@@ -1,0 +1,24 @@
+.add_m_b-wrapper {
+  overflow: hidden;
+  position: relative;
+  height: 80vh;
+  border-radius: 20px;
+}
+
+.add_m_b-bg {
+  opacity: 0.3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.add_m_b-content {
+  position: relative;
+  padding: 20px;
+}
+
+.dropdown-menu {
+  max-height: 250px;
+}
