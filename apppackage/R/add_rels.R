@@ -35,8 +35,6 @@ ui_add_rels <- function(modId)
     )
 }
 
-#' @param dbCon connection to database
-#'
 #' @export
 #'
 #' @import data.table
@@ -44,7 +42,7 @@ ui_add_rels <- function(modId)
 #' @import shiny
 #'
 #' @rdname add_rels
-serv_add_rels <- function(modId, dbCon)
+serv_add_rels <- function(modId)
 {
     moduleServer(
         id = modId,

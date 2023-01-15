@@ -8,12 +8,10 @@
 \usage{
 ui_add_music_band(modId)
 
-serv_add_music_band(modId, dbCon)
+serv_add_music_band(modId)
 }
 \arguments{
 \item{modId}{id to used in the module}
-
-\item{dbCon}{connection to database}
 }
 \value{
 

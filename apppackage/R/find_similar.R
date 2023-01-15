@@ -33,8 +33,6 @@ ui_find_similar <- function(modId)
     )
 }
 
-#' @param dbCon connection to database
-#'
 #' @export
 #'
 #' @import data.table
@@ -43,7 +41,7 @@ ui_find_similar <- function(modId)
 #' @import shinyWidgets
 #'
 #' @rdname find_similar
-server_find_similar <- function(modId, dbCon)
+server_find_similar <- function(modId)
 {
     moduleServer(
         id = modId,
@@ -56,7 +54,7 @@ server_find_similar <- function(modId, dbCon)
                 eventExpr = input$type,
                 handlerExpr = {
                     qq <- "select id, name, genre_id from music_people where type_id = '%s'"
-                    ww <- data.table(dbGetQuery(conn = dbCon, statement = sprintf(qq, input$type)))
+                    ww <- res_query(query = sprintf(qq, input$type))
                     hha <- lapply(
                         X = getOption("genres"),
                         FUN = function(i)
@@ -74,9 +72,9 @@ server_find_similar <- function(modId, dbCon)
             # preparing data for the model
             data_model <- reactive(
                 x = {
-                    tt <- data.table(dbGetQuery(conn = dbCon, statement = "select id, genre_id from music_people"))
-                    rA <- data.table(dbGetQuery(conn = dbCon, statement = "select id_A, id_B, genre_id from rels left join music_people as mp on mp.id = rels.id_A"))
-                    rB <- data.table(dbGetQuery(conn = dbCon, statement = "select id_A, id_B, genre_id from rels left join music_people as mp on mp.id = rels.id_B"))
+                    tt <- res_query(query = "select id, genre_id from music_people")
+                    rA <- res_query(query = "select id_A, id_B, genre_id from rels left join music_people as mp on mp.id = rels.id_A")
+                    rB <- res_query(query = "select id_A, id_B, genre_id from rels left join music_people as mp on mp.id = rels.id_B")
                     rr <- rbind(rA[,.(id = id_B, genre_id)], rB[,.(id = id_A, genre_id)])
                     rr[, val := 1]
                     rr <- rr[,.(val = sum(val)), by = .(id, genre_id)]
@@ -111,7 +109,7 @@ server_find_similar <- function(modId, dbCon)
                             tt$g <- predict(object = mm, newdata = tt)
                             winner <- tt[order(-g)][id != input$sim][1]$id
 
-                            paste0("Most similar to ", name_id(input$sim, dbCon = dbCon), " is ", name_id(winner, dbCon = dbCon))
+                            paste0("Most similar to ", name_id(input$sim), " is ", name_id(winner))
                         }
                     )
                 }

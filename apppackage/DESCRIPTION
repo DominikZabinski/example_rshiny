@@ -15,7 +15,8 @@ Depends:
     DBI, 
     htmltools,
     shiny,
-    data.table
+    data.table,
+    RSQLite
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

@@ -40,8 +40,6 @@ ui_add_music_band <- function(modId)
     )
 }
 
-#' @param dbCon connection to database
-#'
 #' @export
 #'
 #' @import data.table
@@ -49,7 +47,7 @@ ui_add_music_band <- function(modId)
 #' @import shiny
 #'
 #' @rdname add_music_band
-serv_add_music_band <- function(modId, dbCon)
+serv_add_music_band <- function(modId)
 {
     moduleServer(
         id = modId,
@@ -60,15 +58,18 @@ serv_add_music_band <- function(modId, dbCon)
                 handlerExpr = {
                     # TO DO: check if name it's not empty
                     # TO DO: check if it is already in database
-                    thisId <- dbGetQuery(conn = dbCon, statement = "select max(id) as m from music_people")$m + 1
+                    thisId <- res_query(query = "select max(id) as m from music_people")$m + 1
+
                     kk <- data.table(
                         id = thisId,
                         name = input$name,
                         genre_id = input$genre,
                         type_id = input$type
                     )
-                    message(kk)
+
+                    dbCon <- dbConnect(drv = RSQLite::SQLite(), getOption('myDb'))
                     dbAppendTable(conn = dbCon, name = "music_people", value = kk)
+                    dbDisconnect(conn = dbCon)
                 }
             )
         }

@@ -8,12 +8,10 @@
 \usage{
 ui_add_rels(modId)
 
-serv_add_rels(modId, dbCon)
+serv_add_rels(modId)
 }
 \arguments{
 \item{modId}{id to used in the module}
-
-\item{dbCon}{connection to database}
 }
 \value{
 

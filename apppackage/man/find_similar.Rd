@@ -8,12 +8,10 @@
 \usage{
 ui_find_similar(modId)
 
-server_find_similar(modId, dbCon)
+server_find_similar(modId)
 }
 \arguments{
 \item{modId}{id to used in the module}
-
-\item{dbCon}{connection to database}
 }
 \value{
 

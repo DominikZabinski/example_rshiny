@@ -4,12 +4,10 @@
 \alias{name_id}
 \title{Title}
 \usage{
-name_id(i, dbCon)
+name_id(i)
 }
 \arguments{
 \item{i}{id}
-
-\item{dbCon}{connection to database}
 }
 \value{
 string containing basic information about id

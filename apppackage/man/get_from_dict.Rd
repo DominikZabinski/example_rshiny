@@ -4,12 +4,10 @@
 \alias{get_from_dict}
 \title{Title}
 \usage{
-get_from_dict(x, dbCon)
+get_from_dict(x)
 }
 \arguments{
 \item{x}{name of dict}
-
-\item{dbCon}{connection to database}
 }
 \value{
 

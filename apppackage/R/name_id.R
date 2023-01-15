@@ -1,7 +1,6 @@
 #' Title
 #'
 #' @param i id
-#' @param dbCon connection to database
 #'
 #' @return
 #' string containing basic information about id
@@ -11,7 +10,7 @@
 #' @import DBI
 #'
 #' @examples
-name_id <- function(i, dbCon)
+name_id <- function(i)
 {
     qq <- "
     select
@@ -21,6 +20,6 @@ name_id <- function(i, dbCon)
         left join type_dict as t on t.type_id = m.type_id
     where m.id = %s
     "
-    rr <- dbGetQuery(conn = dbCon, statement = sprintf(qq, i))
+    rr <- res_query(query = sprintf(qq, i))
     paste0(rr$name, " (", rr$genre, " ", rr$type, ")")
 }
