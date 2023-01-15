@@ -1,12 +1,13 @@
-#' @title Inline pickerIinput
+#' @title Inline picketInput
 #'
-#' @description Returns pickerInput that could be put inline as a aprt fo a sentence
+#' @description Returns picketInput that could be put inline as a aprt fo a sentence
 #'
 #' @param id id of a input
 #' @param choices choices for input
 #' @param liveSearch use liveSearch? (default: TRUE)
 #'
-#' @return picketInput as inline input
+#' @return
+#' picketInput as inline input
 #'
 #' @export
 #'
@@ -23,7 +24,6 @@ inline_picker_input <- function(id, choices, liveSearch = FALSE)
     res <- pickerInput(
         inputId = id,
         label = NULL,
-        # width = "fit",
         choices = choices,
         options = pickerOptions(
             style = "btn-inline",

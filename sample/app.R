@@ -4,13 +4,11 @@ library(apppackage)
 # add files from package ----
 addResourcePath(prefix = "int", directoryPath = system.file(package = "apppackage"))
 
-# make connection to a database ----
-con <- dbConnect(drv = RSQLite::SQLite(), "mydatabase.sqlite")
-
 # options ----
 options(
-    genres = get_from_dict(x = "genre", dbCon = con),
-    types = get_from_dict(x = "type", dbCon = con)
+    myDb = "mydatabase.sqlite",
+    genres = get_from_dict(x = "genre"),
+    types = get_from_dict(x = "type")
 )
 
 # ui ----
@@ -32,7 +30,7 @@ ui <- fluidPage(
             ui_add_rels(modId = "kk")
         ),
         tabPanel(
-            title = "... discover something new?",
+            title = "... exploring?",
             ui_find_similar(modId = "aa")
         )
     ),
@@ -41,9 +39,9 @@ ui <- fluidPage(
 
 # server ----
 server <- function(input, output) {
-    serv_add_music_band(modId = "jj", dbCon = con)
-    serv_add_rels(modId = "kk", dbCon = con)
-    server_find_similar(modId = "aa", dbCon = con)
+    serv_add_music_band(modId = "jj")
+    serv_add_rels(modId = "kk")
+    server_find_similar(modId = "aa")
 }
 
 # app ----

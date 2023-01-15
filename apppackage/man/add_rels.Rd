@@ -4,7 +4,7 @@
 \alias{add_rels}
 \alias{ui_add_rels}
 \alias{serv_add_rels}
-\title{Title}
+\title{UI and server for adding relationships tab}
 \usage{
 ui_add_rels(modId)
 
@@ -14,10 +14,10 @@ serv_add_rels(modId)
 \item{modId}{id to used in the module}
 }
 \value{
-
+\code{ui_add_rels} returns ui for the tab, \code{serv_add_rels} returns moduleServer for it
 }
 \description{
-Title
+UI and server for adding relationships tab
 }
 \examples{
 

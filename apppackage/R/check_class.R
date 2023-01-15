@@ -1,9 +1,11 @@
-#' Title
+#' @title checking class
 #'
 #' @param x object to check
 #' @param a expected class
 #'
 #' @return
+#' throws an error if object's class does not match needed. returns invisible NULL otherwise
+#'
 #' @export
 #'
 #' @examples

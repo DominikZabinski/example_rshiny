@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_from_dict.R
 \name{get_from_dict}
 \alias{get_from_dict}
-\title{Title}
+\title{getting information from a dict table in db}
 \usage{
 get_from_dict(x)
 }
@@ -10,8 +10,8 @@ get_from_dict(x)
 \item{x}{name of dict}
 }
 \value{
-
+named vector of ids
 }
 \description{
-Title
+getting information from a dict table in db
 }

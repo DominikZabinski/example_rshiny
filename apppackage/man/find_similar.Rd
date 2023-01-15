@@ -4,7 +4,7 @@
 \alias{find_similar}
 \alias{ui_find_similar}
 \alias{server_find_similar}
-\title{Title}
+\title{UI and server fo finding related/similar musicians/bands}
 \usage{
 ui_find_similar(modId)
 
@@ -14,10 +14,10 @@ server_find_similar(modId)
 \item{modId}{id to used in the module}
 }
 \value{
-
+\code{ui_find_similar} returns ui for the tab, \code{server_find_similar} returns moduleServer for it
 }
 \description{
-Title
+UI and server fo finding related/similar musicians/bands
 }
 \examples{
 

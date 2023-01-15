@@ -1,8 +1,10 @@
-#' Title
+#' @title UI and server fo finding related/similar musicians/bands
 #'
 #' @param modId id to used in the module
 #'
 #' @return
+#' \code{ui_find_similar} returns ui for the tab, \code{server_find_similar} returns moduleServer for it
+#'
 #' @export
 #'
 #' @import shiny
@@ -21,6 +23,7 @@ ui_find_similar <- function(modId)
         ),
         tags$div(
             class = 'add_m_b-content',
+            tags$p("You can use this page to find musicians/band related/similar to a particular musician/band."),
             tags$div(
                 tags$span("Show me something"),
                 inline_picker_input(id = ns("what"), choices = c("related", "similar")),
@@ -60,7 +63,7 @@ server_find_similar <- function(modId)
         {
             ns <- NS(namespace = modId)
 
-            # using updatePickerInput to optimize performance
+            # using updatePickerInput to optimize performance (instead rerendering whole input)
             observeEvent(
                 eventExpr = input$type,
                 handlerExpr = {

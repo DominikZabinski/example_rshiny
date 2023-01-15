@@ -2,18 +2,18 @@
 % Please edit documentation in R/res_query.R
 \name{res_query}
 \alias{res_query}
-\title{Title}
+\title{results of a query}
 \usage{
 res_query(query, db = "mydatabase.sqlite")
 }
 \arguments{
 \item{query}{query to execute}
 
-\item{db}{name of ifle with database}
+\item{db}{name of file with database}
 }
 \value{
-
+data.table with the results of an query
 }
 \description{
-Title
+results of a query
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_class.R
 \name{check_class}
 \alias{check_class}
-\title{Title}
+\title{checking class}
 \usage{
 check_class(x, a)
 }
@@ -12,10 +12,10 @@ check_class(x, a)
 \item{a}{expected class}
 }
 \value{
-
+throws an error if object's class does not match needed. returns invisible NULL otherwise
 }
 \description{
-Title
+checking class
 }
 \examples{
 check_class(1, "numeric")

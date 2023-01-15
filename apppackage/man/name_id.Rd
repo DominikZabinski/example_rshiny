@@ -2,7 +2,7 @@
 % Please edit documentation in R/name_id.R
 \name{name_id}
 \alias{name_id}
-\title{Title}
+\title{naming id}
 \usage{
 name_id(i, addSpecialClass = F, info = T)
 }
@@ -17,5 +17,5 @@ name_id(i, addSpecialClass = F, info = T)
 string containing basic information about id
 }
 \description{
-Title
+naming id
 }

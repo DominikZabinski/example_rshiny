@@ -1,8 +1,10 @@
-#' Title
+#' @title getting information from a dict table in db
 #'
 #' @param x name of dict
 #'
 #' @return
+#' named vector of ids
+#'
 #' @export
 #'
 #' @examples

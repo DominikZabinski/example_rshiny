@@ -1,10 +1,10 @@
-# creating database
+# creating database (run from sample.Rproj)
 # libraries ----
 library(DBI)
 library(data.table)
 
 # reading data ----
-musicPeople <- data.table(read.csv2(file = "data.csv", stringsAsFactors = F))
+musicPeople <- data.table(read.csv2(file = "../data/data.csv", stringsAsFactors = F))
 
 # creating dictionairies ----
 genreDict <- data.table(genre = unique(musicPeople$genre))
@@ -26,13 +26,12 @@ rels <- rels[sample(1:nrow(rels), size = ceiling(.15 * nrow(rels)))]
 rels$id <- 1:nrow(rels)
 
 # saving data in .sqlite database ----
-con <- dbConnect(drv = RSQLite::SQLite(), "mydatabase.sqlite")
+con <- dbConnect(drv = RSQLite::SQLite(), "../data/mydatabase.sqlite")
 dbWriteTable(conn = con, name = "music_people", value = musicPeople)
 dbWriteTable(conn = con, name = "type_dict", value = typeDict)
 dbWriteTable(conn = con, name = "genre_dict", value = genreDict)
 dbWriteTable(conn = con, name = "rels", value = rels)
 
-dbListTables(con)
-
 dbDisconnect(conn = con)
-# copy it to app directory
+
+file.copy(from = "../data/mydatabase.sqlite", to = "mydatabase.sqlite", overwrite = T)

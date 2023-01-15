@@ -2,7 +2,7 @@
 % Please edit documentation in R/inline_picker_input.R
 \name{inline_picker_input}
 \alias{inline_picker_input}
-\title{Inline pickerIinput}
+\title{Inline picketInput}
 \usage{
 inline_picker_input(id, choices, liveSearch = FALSE)
 }
@@ -17,7 +17,7 @@ inline_picker_input(id, choices, liveSearch = FALSE)
 picketInput as inline input
 }
 \description{
-Returns pickerInput that could be put inline as a aprt fo a sentence
+Returns picketInput that could be put inline as a aprt fo a sentence
 }
 \examples{
 tags$div(

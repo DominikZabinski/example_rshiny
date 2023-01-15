@@ -4,7 +4,7 @@
 \alias{add_music_band}
 \alias{ui_add_music_band}
 \alias{serv_add_music_band}
-\title{Title}
+\title{UI and server for adding tab}
 \usage{
 ui_add_music_band(modId)
 
@@ -14,10 +14,10 @@ serv_add_music_band(modId)
 \item{modId}{id to used in the module}
 }
 \value{
-
+\code{ui_add_music_band} returns ui for the tab, \code{serv_add_music_band} returns moduleServer for it
 }
 \description{
-Title
+UI and server for adding tab
 }
 \examples{
 

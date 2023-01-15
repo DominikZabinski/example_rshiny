@@ -1,4 +1,4 @@
-#' Title
+#' @title naming id
 #'
 #' @param i id
 #' @param addSpecialClass add class and present as a span?

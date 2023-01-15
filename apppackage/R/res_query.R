@@ -1,9 +1,11 @@
-#' Title
+#' @title results of a query
 #'
 #' @param query query to execute
-#' @param db name of ifle with database
+#' @param db name of file with database
 #'
 #' @return
+#' data.table with the results of an query
+#'
 #' @export
 #'
 #' @import DBI
