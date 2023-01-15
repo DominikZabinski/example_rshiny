@@ -17,3 +17,13 @@ h1, h2, h3, h4, h5, h6 {
 label, p, .add_m_b-wrapper, .shiny-text-output, .selectize-control, span {
     font-family: 'Noto Sans', sans-serif;
 }
+
+.names {
+  font-family: 'Rock Salt', cursive;
+  font-weight: bold;
+}
+
+.btn-default {
+  font-family: 'Rock Salt', cursive;
+  font-weight: bold;
+}

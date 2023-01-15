@@ -29,8 +29,8 @@ I'm using <code>{roxygen2}</code> to document all the functions in the package.
 
 All of the functions and modules are stored in a <code>{apppackage}</code>. The only .R files in this directory is an app.R file that:
 
-- loads apppackage
-- enables using staitc files from apppackage package
+- loads <code>{apppackage}</code>
+- enables using staitc files from <code>{apppackage}</code> package
 - defines final UI and server parts
 
 ## Justifying choices
@@ -42,4 +42,4 @@ For packages:
 - <code>{shinyWidgets}</code> - pickerInput mostly (inline option enables making sentences with inputs in them which will make app easier to use),
 - <code>{htmltools}</code> - for tagAppendAttributes
 - <code>{data.table}</code> - for data wrangling
-- <code>{ggplot2}</code>
+- <code>{ggplot2}</code> - for visualizations

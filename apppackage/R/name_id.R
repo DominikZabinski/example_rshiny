@@ -1,6 +1,8 @@
 #' Title
 #'
 #' @param i id
+#' @param addSpecialClass add class and present as a span?
+#' @param info add info as in genre and type?
 #'
 #' @return
 #' string containing basic information about id
@@ -10,7 +12,7 @@
 #' @import DBI
 #'
 #' @examples
-name_id <- function(i)
+name_id <- function(i, addSpecialClass = F, info = T)
 {
     qq <- "
     select
@@ -21,5 +23,8 @@ name_id <- function(i)
     where m.id = %s
     "
     rr <- res_query(query = sprintf(qq, i))
-    paste0(rr$name, " (", rr$genre, " ", rr$type, ")")
+    res <- paste0(rr$name, " (", rr$genre, " ", rr$type, ")")
+    if (!info) res <- rr$name
+    if (addSpecialClass) res <- paste0("<span class='names'>", res, "</span>")
+    return(res)
 }

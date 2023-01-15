@@ -4,10 +4,14 @@
 \alias{name_id}
 \title{Title}
 \usage{
-name_id(i)
+name_id(i, addSpecialClass = F, info = T)
 }
 \arguments{
 \item{i}{id}
+
+\item{addSpecialClass}{add class and present as a span?}
+
+\item{info}{add info as in genre and type?}
 }
 \value{
 string containing basic information about id
